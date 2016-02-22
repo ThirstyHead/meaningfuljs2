@@ -1,0 +1,16 @@
+{
+  "name": "meaningfuljs2",
+  "version": "0.1.0",
+  "description": "A simple, sane MEAN stack featuring Angular 2.",
+  "main": "server.js",
+  "author": "Scott Davis <scott@thirstyhead.com>",
+  "license": "MIT",
+  "ignore": [
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {},
+  "dependencies": {}
+}

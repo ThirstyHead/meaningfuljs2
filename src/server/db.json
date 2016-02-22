@@ -1,0 +1,11 @@
+{
+    "books":[
+        {"id":1, "title":"Mastering MEAN"},
+        {"id":2, "title":"MEAN Development"}
+    ],
+
+    "authors":[
+        {"id":1, "name":"Scott Davis"},
+        {"id":2, "name":"Bubba Jones"}
+    ]
+}
