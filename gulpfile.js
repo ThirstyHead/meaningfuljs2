@@ -128,13 +128,13 @@ gulp.task('nodemon',
            });
 
 /**
- * Deletes generated and downloaded artifacts (node_modules, bower_components)
+ * Deletes generated and downloaded artifacts (node_modules, jspm_packages)
  */
 gulp.task('reset',
           'Deletes generated (build, dist) ' +
-          'and downloaded artifacts (node_modules, bower_components)',
+          'and downloaded artifacts (node_modules, jspm_packages)',
           (cb) => {
-              del.sync([config.dir.build, config.dir.dist, config.dir.bower, config.dir.npm]);
+              del.sync([config.dir.build, config.dir.dist, config.dir.jspm, config.dir.npm]);
               return cb();
           });
 
