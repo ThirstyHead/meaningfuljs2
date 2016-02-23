@@ -6,6 +6,7 @@ let gulp = require('gulp-help')(require('gulp'));
 let gulpPlugin = require('gulp-load-plugins')({lazy: true});
 let del = require('del');
 let browserSync = require('browser-sync');
+let merge = require('merge-stream');
 
 //NOTE: this hides tasks from 'gulp help' console output,
 //      but leaves them runnable as dependent tasks
@@ -64,8 +65,14 @@ gulp.task('build-img',
 gulp.task('build-js',
           hideFromTaskList,
           () => {
-              return gulp.src(config.src.js)
-                         .pipe(gulp.dest(config.dir.build));
+              // copy all app js, config.js, and jspm_packages
+              let appjs = gulp.src(config.src.js)
+                              .pipe(gulp.dest(config.dir.build));
+              let jspm_packages = gulp.src(`${config.dir.jspm}/**/*`)
+                                      .pipe(gulp.dest(`${config.dir.build}/jspm_packages`));
+              let config_js = gulp.src('./config.js')
+                                  .pipe(gulp.dest(`${config.dir.build}/components`));
+              return merge(appjs, jspm_packages, config_js);
           });
 
 /**
