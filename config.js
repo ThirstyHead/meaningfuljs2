@@ -9,15 +9,16 @@ System.config({
       "es7.decorators"
     ]
   },
+  paths: {
+    "github:*": "jspm_packages/github/*",
+    "npm:*": "jspm_packages/npm/*"
+  },
+
   packages: {
     "components": {
       "main": "main",
       "defaultExtension": "js"
     }
-  },
-  paths: {
-    "github:*": "jspm_packages/github/*",
-    "npm:*": "jspm_packages/npm/*"
   },
 
   map: {
@@ -25,6 +26,7 @@ System.config({
     "babel": "npm:babel-core@5.8.35",
     "babel-runtime": "npm:babel-runtime@5.8.35",
     "core-js": "npm:core-js@2.1.1",
+    "es6-shim": "github:es-shims/es6-shim@0.34.4",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
     "rxjs": "npm:rxjs@5.0.0-beta.2",
     "zone.js": "npm:zone.js@0.5.15",
