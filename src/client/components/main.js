@@ -1,6 +1,13 @@
-import 'zone.js/dist/zone.min.js';
+// import 'zone.js';
+// import 'reflect-metadata';
+// import 'angular2/bundles/angular2-polyfills';
+// import 'core-js';
+
+import 'es6-shim';
 import 'reflect-metadata';
-import 'core-js';
+import 'zone.js/dist/zone-microtask';
+import 'rxjs/Rx';
+
 import {bootstrap} from 'angular2/platform/browser';
-import {App} from './app/app';
-bootstrap(App);
+import {AppComponent} from './app/app.component';
+bootstrap(AppComponent);
