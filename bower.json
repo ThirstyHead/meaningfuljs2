@@ -8,9 +8,22 @@
   "ignore": [
     "node_modules",
     "bower_components",
+    "jspm_packages",
+    "build",
+    "dist",
     "test",
-    "tests"
+    "tests",
+    "**/.*"
   ],
   "devDependencies": {},
-  "dependencies": {}
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.3.1"
+  },
+  "homepage": "https://github.com/ThirstyHead/meaningfuljs2",
+  "authors": [
+    "Scott Davis <scott@thirstyhead.com>"
+  ],
+  "moduleType": [
+    "globals"
+  ]
 }
