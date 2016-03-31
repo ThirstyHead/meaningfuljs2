@@ -8,6 +8,7 @@ import {provide} from 'angular2/core';
 import {LocationStrategy, Location, HashLocationStrategy } from 'angular2/router';
 
 import {SidebarComponent} from '../sidebar/sidebar.component';
+import {BooksComponent} from '../books/books.component';
 
 @Component({
   selector: 'my-app',
@@ -17,7 +18,12 @@ import {SidebarComponent} from '../sidebar/sidebar.component';
   styleUrls: ['components/app/app.component.css']
 })
 @RouteConfig([
-
+  {
+    path: '/books',
+    name: 'Books',
+    component: BooksComponent,
+    useAsDefault: true
+  }
 ])
 export class AppComponent{
   constructor(router){
