@@ -1,10 +1,17 @@
+<link rel="stylesheet" href="sidebar.component.css">
+
 <nav role="listbox">
-  <paper-icon-item>
-    <iron-icon icon="av:library-books" item-icon></iron-icon>
-    <a [routerLink]="['Books']">Books</a>
-  </paper-icon-item>
-  <paper-icon-item>
-    <iron-icon icon="social:group" item-icon></iron-icon>
-    <a [routerLink]="['Authors']">Authors</a>
-  </paper-icon-item>
+
+  <a [routerLink]="['Books']" class="nav__item">
+    <paper-icon-item>
+      <iron-icon icon="av:library-books" item-icon></iron-icon>
+      Books
+    </paper-icon-item>
+  </a>
+  <a [routerLink]="['Authors']" class="nav__item">
+    <paper-icon-item>
+      <iron-icon icon="social:group" item-icon></iron-icon>
+      Authors
+    </paper-icon-item>
+  </a>
 </nav>

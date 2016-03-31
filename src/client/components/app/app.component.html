@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="app.component.css">
+
 <paper-drawer-panel>
   <!-- Drawer -->
   <paper-header-panel drawer>
@@ -16,7 +18,7 @@
       <paper-icon-button icon="menu" paper-drawer-toggle></paper-icon-button>
       <div class="title">{{title}}</div>
     </paper-toolbar>
-    <div>
+    <div class="paper-drawer-panel__main">
       <router-outlet></router-outlet>
     </div>
   </paper-header-panel>

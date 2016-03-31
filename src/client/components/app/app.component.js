@@ -9,6 +9,7 @@ import {LocationStrategy, Location, HashLocationStrategy } from 'angular2/router
 
 import {SidebarComponent} from '../sidebar/sidebar.component';
 import {BooksComponent} from '../books/books.component';
+import {AuthorsComponent} from '../authors/authors.component';
 
 @Component({
   selector: 'my-app',
@@ -23,7 +24,13 @@ import {BooksComponent} from '../books/books.component';
     name: 'Books',
     component: BooksComponent,
     useAsDefault: true
+  },
+  {
+    path: '/authors',
+    name: 'Authors',
+    component: AuthorsComponent
   }
+
 ])
 export class AppComponent{
   constructor(router){
