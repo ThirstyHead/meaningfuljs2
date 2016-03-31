@@ -12,7 +12,7 @@ export class AuthorsComponent{
   constructor(authorsService){
     this.title = "Authors";
     this.authorsService = authorsService;
-    this.list = [];
+    this.authors = [];
   }
 
   static get parameters() {
@@ -22,8 +22,8 @@ export class AuthorsComponent{
   ngOnInit() {
     this.authorsService.getList()
       .then( (items) => {
-          this.list = items;
-          console.dir(this.list);
+          this.authors = items;
+          console.dir(this.authors);
       })
   }
 }
