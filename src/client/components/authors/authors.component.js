@@ -19,11 +19,14 @@ export class AuthorsComponent{
     return [[AuthorsService]];
   }
 
-  ngOnInit() {
-    this.authorsService.getList()
-      .then( (items) => {
-          this.authors = items;
-          console.dir(this.authors);
-      })
+  ngOnInit(){
+    this.getAuthors();
   }
-}
+
+  getAuthors(){
+    this.authorsService.getList()
+                       .subscribe(
+                         authors => this.authors = authors,
+                         error => this.errorMessage = error
+                       )
+  }}

@@ -1,21 +1,33 @@
+'use strict';
+
 import {Injectable} from 'angular2/core';
-import {AUTHORS} from './mock-authors';
+import {Http, Response} from 'angular2/http';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class AuthorsService{
-    constructor() {
-      console.log('AuthorsService.constructor()');
-      this.list = AUTHORS;
-    }
+  constructor(http){
+    this.http = http;
+    this.url = 'mock/authors';
+  }
 
-    getList(){
-        return Promise.resolve(this.list);
-    }
+  static get parameters(){
+    return [[Http]];
+  }
 
-    getItem(id){
-      let result = this.list.find( (element, index, array) => {
-        return element.id === id;
-      });
-      return Promise.resolve(result);
-    }
+  ngOnInit(){
+
+  }
+
+  getList(){
+    return this.http.get(this.url)
+                    .map( res => res.json() )
+                    .do( data => console.dir(data) )
+                    .catch(this.handleError);
+  }
+
+  handleError(err){
+    console.error(err);
+    return Observable.throw(error.json().error || 'Error in AuthorsService');
+  }
 }
