@@ -7,9 +7,11 @@ import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2
 import {provide} from 'angular2/core';
 import {LocationStrategy, Location, HashLocationStrategy } from 'angular2/router';
 
+import {SidebarComponent} from '../sidebar/sidebar.component';
+
 @Component({
   selector: 'my-app',
-  directives: [ROUTER_DIRECTIVES],
+  directives: [ROUTER_DIRECTIVES, SidebarComponent],
   providers: [ROUTER_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })],
   templateUrl: 'components/app/app.component.html',
   styleUrls: ['components/app/app.component.css']
