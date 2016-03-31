@@ -24,9 +24,19 @@ gulp.task('default',
  */
 gulp.task('build',
           'Builds runnable app (dev-mode)',
-          ['build-html', 'build-js', 'build-css', 'build-img'],
+          ['build-html', 'build-js', 'build-css', 'build-img', 'build-bower'],
           () => {
 
+          });
+
+/**
+ * Builds Bower Components
+ */
+gulp.task('build-bower',
+          hideFromTaskList,
+          () => {
+              return gulp.src(config.src.bower)
+                         .pipe(gulp.dest(`${config.dir.build}/bower_components`));
           });
 
 /**
@@ -128,47 +138,50 @@ gulp.task('nodemon',
            });
 
 /**
-* Deletes generated and downloaded artifacts (node_modules, jspm_packages)
+* Deletes generated and downloaded artifacts (node_modules, jspm_packages, bower_components)
 */
 gulp.task('reset',
-         'Deletes generated (build, dist) ' +
-         'and downloaded artifacts (node_modules, jspm_packages)',
-         (cb) => {
-             del.sync([config.dir.build, config.dir.dist, config.dir.jspm, config.dir.npm]);
-             return cb();
-         });
+        'Deletes generated (build, dist) ' +
+        'and downloaded artifacts (node_modules, jspm_packages, bower_components)',
+        (cb) => {
+            del.sync([config.dir.build, config.dir.dist, config.dir.jspm, config.dir.npm, config.dir.bower]);
+            return cb();
+        });
 
 /**
- * Runs website (dev-mode)
- */
+* Runs website (dev-mode)
+*/
 gulp.task('run',
-          'Runs website (dev-mode)',
-          ['nodemon'],
-          () => {
-              let hostname = process.env.HOSTNAME || config.web.hostname || 'localhost';
-              let port = process.env.PORT || config.web.port || 8000;
-              let syncPort = process.env.SYNC_PORT || 4000;
-              let browserSyncOptions = {
-                  // All of the following files will be watched
-                  files: [config.dir.build + '/**/*.*'],
+         `Runs website (dev-mode)\n\t\tUse '--server' to disable browser launch`,
+         ['nodemon'],
+         () => {
+             let hostname = process.env.HOSTNAME || config.web.hostname || 'localhost';
+             let port = process.env.PORT || config.web.port || 8000;
+             let syncPort = process.env.SYNC_PORT || 4000;
+             let serverOnly = process.argv.indexOf('--server') !== -1;
+             if(!serverOnly){
+                 let browserSyncOptions = {
+                     // All of the following files will be watched
+                     files: [config.dir.build + '/**/*.*'],
 
-                  // Tells BrowserSync on where the express app is running
-                  proxy: `http://${hostname}:${port}`,
+                     // Tells BrowserSync on where the express app is running
+                     proxy: `http://${hostname}:${port}`,
 
-                  // This port should be different from the express app port
-                  port: syncPort,
+                     // This port should be different from the express app port
+                     port: syncPort,
 
-                  // Which browser should we launch?
-                  browser: ['google chrome']
-              };
+                     // Which browser should we launch?
+                     browser: ['google chrome']
+                 };
 
-              browserSync.init(browserSyncOptions);
+                 browserSync.init(browserSyncOptions);
+             }
 
-              // Register a watcher on the src directory for changes,
-              // which will update the build directory,
-              // which will trigger browserSync + nodemon
-              return gulp.watch(config.dir.src + '/**/*.*', ['build']);
-          });
+             // Register a watcher on the src directory for changes,
+             // which will update the build directory,
+             // which will trigger browserSync + nodemon
+             return gulp.watch(config.dir.src + '/**/*.*', ['build']);
+         });
 
 /**
  * Runs website (prod-mode)

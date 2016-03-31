@@ -2,13 +2,52 @@
 <html>
 <head>
     <title>My First Angular 2 App</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <base href="/">
+
+    <!-- Polymer / Material Design -->
+    <!-- NOTE: this makes me weep hot, bitter, jspm-tinged tears of rage -->
+    <!-- When it goes beta, we'll switch to https://github.com/angular/material2 -->
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <!-- NOTE: When using Polymer with Angular 2, enable "real" shadow dom -->
+    <script>
+      window.Polymer = window.Polymer || {};
+      window.Polymer.dom = 'shadow';
+    </script>
+    <link rel="import" href="bower_components/paper-styles/color.html">
+    <link rel="import" href="bower_components/paper-styles/default-theme.html">
+    <link rel="import" href="bower_components/paper-styles/shadow.html">
+    <link rel="import" href="bower_components/paper-styles/typography.html">
+    <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
+    <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
+    <link rel="import" href="bower_components/paper-toolbar/paper-toolbar.html">
+    <link rel="import" href="bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="bower_components/iron-icons/iron-icons.html">
+    <link rel="import" href="bower_components/iron-icons/av-icons.html">
+    <link rel="import" href="bower_components/iron-icons/social-icons.html">
+    <link rel="import" href="bower_components/paper-item/paper-item.html">
+    <link rel="import" href="bower_components/paper-item/paper-icon-item.html">
+
+    <style is="custom-style">
+          :root {
+
+            --paper-toolbar-title: {
+              /*font-weight: bold;*/
+              font-size: 1.5em;
+              line-height: 1.5em;
+            }
+          }
+    </style>
+    <!-- Polymer / Material Design -->
+
     <script src="jspm_packages/system.js"></script>
     <script src="components/config.js"></script>
     <script>
         System.import("components");
     </script>
 </head>
-<body>
+<body class="fullbleed layout vertical">
     <my-app>Loading...</my-app>
 </body>
 </html>
