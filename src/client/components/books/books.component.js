@@ -9,32 +9,26 @@ import {BooksService} from './books.service';
   styleUrls: ['components/books/books.component.css']
 })
 export class BooksComponent{
-  constructor(){
+  constructor(booksService){
     this.title = "Books";
-    // this.booksService = booksService;
-    this.bookList = [];
+    this.booksService = booksService;
+    this.books = [];
   }
 
-  // Angular 2 Dependency Injection for ECMAScript 6
-  // If you're using TypeScript, you can use @Inject on
-  // constructor parameters. Sadly, this is not valid
-  // ES6 or ES7 syntax.
-  // NOTE: 1st in call order
   static get parameters(){
-    // return [[BooksService]];
+    return [[BooksService]];
   }
 
   ngOnInit(){
-    // this.getBooks();
-    console.log(this.bookList);
+    this.getBooks();
   }
 
   getBooks(){
-    // this.booksService.getList()
-    //                  .subscribe(
-    //                    books => this.bookList = books,
-    //                    error => this.errorMessage = error
-    //                  )
+    this.booksService.getList()
+                     .subscribe(
+                       books => this.books = books,
+                       error => this.errorMessage = error
+                     )
   }
 
 }

@@ -21,9 +21,8 @@ export class BooksService{
 
   getList(){
     return this.http.get(this.url)
-                    .map( (res) => {
-                      return res.json();
-                    })
+                    .map( res => res.json() )
+                    .do( data => console.dir(data) )
                     .catch(this.handleError);
   }
 

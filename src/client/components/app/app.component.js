@@ -8,7 +8,7 @@ import {provide} from 'angular2/core';
 import {LocationStrategy, Location, HashLocationStrategy } from 'angular2/router';
 
 // Services (e.g. Providers)
-import {Http} from 'angular2/http';
+import {HTTP_PROVIDERS} from 'angular2/http';
 import {AuthorsService} from '../authors/authors.service';
 import {BooksService} from '../books/books.service';
 
@@ -20,7 +20,7 @@ import {AuthorsComponent} from '../authors/authors.component';
 @Component({
   selector: 'my-app',
   directives: [ROUTER_DIRECTIVES, SidebarComponent],
-  providers: [AuthorsService, BooksService, ROUTER_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })],
+  providers: [AuthorsService, BooksService, HTTP_PROVIDERS, ROUTER_PROVIDERS, provide(LocationStrategy, { useClass: HashLocationStrategy })],
   templateUrl: 'components/app/app.component.html',
   styleUrls: ['components/app/app.component.css']
 })

@@ -1,1 +1,7 @@
 <h1>{{title}}</h1>
+
+<div role="listbox">
+    <paper-item *ngFor="#book of books">
+      {{book.id}} - {{book.title}}
+    </paper-item>
+</div>
