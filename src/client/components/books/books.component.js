@@ -2,11 +2,13 @@
 
 import {Component} from 'angular2/core';
 import {BooksService} from './books.service';
+import {BookFormComponent} from './book-form.component';
 
 @Component({
   selector: 'my-books',
   templateUrl: 'components/books/books.component.html',
-  styleUrls: ['components/books/books.component.css']
+  styleUrls: ['components/books/books.component.css'],
+  directives: [BookFormComponent]
 })
 export class BooksComponent{
   constructor(booksService){
