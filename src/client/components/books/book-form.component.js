@@ -13,11 +13,10 @@ export class BookFormComponent{
     constructor(){
       this.formats = ['Paper', 'PDF', 'EPub'];
       this.book = new Book({});
-      this.submitted = false;
     }
 
     onSubmit(){
-      this.submitted = true;
+      console.dir(this.book);
     }
 
     //debug helper

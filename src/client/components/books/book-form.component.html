@@ -2,19 +2,15 @@
 
 <div>
   <h1>Book</h1>
-  <form class="book-form">
-    <div>
-      <label for="id">ID</label>
-      <input type="text"
-             name="id"
-             id="id"
-             [(ngModel)]="book.id">
-    </div>
+  <form class="book-form"
+        (ngSubmit)="onSubmit()">
+
+    <input type="hidden"
+           [(ngModel)]="book.id">
 
     <div>
       <label for="title">Title</label>
       <input type="text"
-             name="title"
              id="title"
              [(ngModel)]="book.title">
     </div>
@@ -22,15 +18,13 @@
     <div>
       <label for="pages">Pages</label>
       <input type="text"
-             name="pages"
              id="pages"
              [(ngModel)]="book.pages">
     </div>
 
     <div>
       <label for="format">Format</label>
-      <select name="format"
-              id="format"
+      <select id="format"
               [(ngModel)]="book.format">
         <option *ngFor="#f of formats"
                 [value]="f">{{f}}</option>
