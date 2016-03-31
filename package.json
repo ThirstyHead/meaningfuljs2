@@ -1,6 +1,6 @@
 {
   "name": "meaningfuljs2",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "description": "A simple, sane MEAN stack featuring Angular 2.",
   "main": "server.js",
   "scripts": {
