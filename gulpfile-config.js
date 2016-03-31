@@ -15,6 +15,7 @@ dir.client = dir.src + '/client';
 dir.server = dir.src + '/server';
 dir.jspm = './jspm_packages';
 dir.npm = './node_modules';
+dir.bower = './bower_components';
 
 // src is for logical groups of source files
 // for example: 'src.img' includes *.png, *.jpg, etc.
@@ -31,6 +32,7 @@ src.img = [
 ];
 src.favicon = [dir.client + '/favicon.ico'];
 src.js = [dir.client + '/**/*.js'];
+src.bower = [dir.bower + '/**/*.*'];
 
 // build is for logical groups of built files
 // for example: ES6 JavaScript files that have been
@@ -61,9 +63,3 @@ module.exports.web = web;
 
 web.hostname = 'localhost';
 web.port = 8000;
-
-
-
-
-
-
