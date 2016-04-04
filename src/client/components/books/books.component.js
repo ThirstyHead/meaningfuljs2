@@ -1,6 +1,6 @@
 'use strict';
 
-import {Component, EventEmitter} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {BooksService} from './books.service';
 import {BookFormComponent} from './book-form.component';
 
@@ -8,15 +8,13 @@ import {BookFormComponent} from './book-form.component';
   selector: 'my-books',
   templateUrl: 'components/books/books.component.html',
   styleUrls: ['components/books/books.component.css'],
-  directives: [BookFormComponent],
-  inputs: ['newBook']
+  directives: [BookFormComponent]
 })
 export class BooksComponent{
   constructor(booksService){
     this.title = "Books";
     this.booksService = booksService;
     this.books = [];
-    this.newBookEventListener = new EventEmitter();
   }
 
   static get parameters(){
@@ -25,10 +23,6 @@ export class BooksComponent{
 
   ngOnInit(){
     this.getBooks();
-    this.newBookEventListener.subscribe( (newBook) => {
-      console.log("Hey, look what I just heard about:");
-      console.dir(newBook);
-    })
   }
 
   getBooks(){
