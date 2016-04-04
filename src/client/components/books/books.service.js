@@ -1,7 +1,7 @@
 'use strict';
 
 import {Injectable} from 'angular2/core';
-import {Http, Response} from 'angular2/http';
+import {Http, Response, Headers, RequestOptions} from 'angular2/http';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
@@ -22,12 +22,32 @@ export class BooksService{
   getList(){
     return this.http.get(this.url)
                     .map( res => res.json() )
-                    .do( data => console.dir(data) )
+                    .do( data => {
+                      console.log("BooksService.getList()");
+                      console.dir(data)
+                    })
                     .catch(this.handleError);
   }
 
   handleError(err){
     console.error(err);
     return Observable.throw(error.json().error || 'Error in BooksService');
+  }
+
+  create(obj){
+    console.log("BooksService.create()");
+
+    //strip id, since this is a new object
+    delete obj.id;
+
+    let body = JSON.stringify(obj);
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.post(this.url, body, options)
+                    .map( res => {
+                      return res.json();
+                    })
+                    .catch(this.handleError);
   }
 }
