@@ -7,7 +7,7 @@ import {BooksService} from './books.service';
 
 @Component({
     selector: 'my-book-form',
-    templateUrl: 'components/books/book-form.component.html',
+    templateUrl: 'components/books/book-form.component.dialog.html',
     styleUrls: ['components/books/book-form.component.css']
 })
 export class BookFormComponent{
