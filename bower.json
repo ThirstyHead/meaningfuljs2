@@ -34,6 +34,7 @@
     "paper-item": "PolymerElements/paper-item#^1.1.4",
     "paper-button": "PolymerElements/paper-button#^1.0.11",
     "paper-dialog": "PolymerElements/paper-dialog#^1.0.4",
-    "paper-dialog-behavior": "PolymerElements/paper-dialog-behavior#^1.2.5"
+    "paper-dialog-behavior": "PolymerElements/paper-dialog-behavior#^1.2.5",
+    "paper-input": "PolymerElements/paper-input#^1.1.10"
   }
 }
