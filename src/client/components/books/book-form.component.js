@@ -1,6 +1,6 @@
 'use strict';
 
-import {Component} from 'angular2/core';
+import {Component, EventEmitter} from 'angular2/core';
 import {NgForm} from 'angular2/common';
 import {Book} from './book';
 import {BooksService} from './books.service';
@@ -11,13 +11,15 @@ import {BooksService} from './books.service';
     styleUrls: ['components/books/book-form.component.css'],
     host:{
       '(iron-overlay-closed)':'dialogClose($event)'
-    }
+    },
+    outputs: ['listChanged']
 })
 export class BookFormComponent{
     constructor(booksService){
       this.booksService = booksService;
       this.formats = ['Paper', 'PDF', 'EPub'];
       this.book = new Book({});
+      this.listChanged = new EventEmitter();
     }
 
     static get parameters(){
@@ -36,6 +38,7 @@ export class BookFormComponent{
                          item => {
                            this.book = item;
                            console.dir(this.book);
+                           this.listChanged.next('new book');
                          },
                          err => console.error(err)
                        );

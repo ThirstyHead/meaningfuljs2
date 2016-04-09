@@ -16,11 +16,15 @@ export class BooksComponent{
     this.title = "Books";
     this.booksService = booksService;
     this.books = [];
+
+    // EventEmitter for this component
     this.listChanged = new EventEmitter();
     this.listChanged.subscribe( (listChanged) => {
       console.log("listChanged event caught");
       this.getBooks();
     });
+
+
   }
 
   static get parameters(){
