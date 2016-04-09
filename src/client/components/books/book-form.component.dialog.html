@@ -2,24 +2,18 @@
     <h2>Book</h2>
     <form>
       <input type="hidden" name="id" id="id">
-
       <paper-input label="Title" name="title"></paper-input>
       <paper-input label="Pages" name="pages"></paper-input>
-
-      <div class="">
-        <label for="format">Format</label>
-        <select name="format"
-                id="format">
-          <option *ngFor="#f of formats"
-                  [value]="f">{{f}}</option>
-        </select>
-      </div>
+      <paper-dropdown-menu label="Format" name="format">
+        <paper-menu class="dropdown-content">
+          <paper-item *ngFor="#f of formats"
+                  [value]="f">{{f}}</paper-item>
+        </paper-menu>
+      </paper-dropdown-menu>
     </form>
-
 
     <div class="buttons">
       <paper-button dialog-dismiss>Cancel</paper-button>
       <paper-button dialog-confirm autofocus>Save</paper-button>
     </div>
-
 </paper-dialog>
