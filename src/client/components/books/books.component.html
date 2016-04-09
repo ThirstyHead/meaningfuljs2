@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="books.component.css">
+
 <h2>
   {{title}}
 </h2>
@@ -8,6 +10,9 @@
 
 <div role="listbox">
     <paper-item *ngFor="#book of books">
+      <iron-icon icon="delete"
+                 item-icon
+                 (click)="delete(book)"></iron-icon>
       {{book.id}} - {{book.title}}
     </paper-item>
 </div>

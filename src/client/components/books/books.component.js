@@ -33,7 +33,12 @@ export class BooksComponent{
                      )
   }
 
-  openDialog(){
+  delete(book){
+    this.booksService.delete(book)
+                     .subscribe(
+                       result => console.log(result),
+                       error => this.errorMessage = error
+                     )
 
   }
 

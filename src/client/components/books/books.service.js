@@ -50,4 +50,28 @@ export class BooksService{
                     })
                     .catch(this.handleError);
   }
+
+  update(obj){
+    console.log("BooksService.update()");
+
+    let body = JSON.stringify(obj);
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+    return this.http.put(`${this.url}/${obj.id}`, body, options)
+                    .map( res => {
+                      return res.json();
+                    })
+                    .catch(this.handleError);
+  }
+
+  delete(obj){
+    console.log("BooksService.delete()");
+    return this.http.delete(`${this.url}/${obj.id}`)
+                    .map( res => {
+                      return res.json();
+                    })
+                    .catch(this.handleError);
+  }
+
 }
