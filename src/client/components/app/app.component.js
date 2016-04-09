@@ -38,11 +38,9 @@ import {AuthorsComponent} from '../authors/authors.component';
   }
 ])
 export class AppComponent{
-  constructor(router, authorsService, booksService){
+  constructor(router){
     this.title = "My First Angular 2 App";
     this.router = router;
-    this.authorsService = authorsService;
-    this.booksService = booksService;
   }
 
   // Angular 2 Dependency Injection for ECMAScript 6
@@ -51,7 +49,7 @@ export class AppComponent{
   // ES6 or ES7 syntax.
   // NOTE: 1st in call order
   static get parameters() {
-    return [[Router], [AuthorsService], [BooksService]];
+    return [[Router]];
   }
 
   ngOnInit() {
