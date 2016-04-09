@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="book-form.component.css">
+
+<div>
+  <h1>Book</h1>
+  <form class="book-form"
+        (ngSubmit)="onSubmit()">
+
+    <input type="hidden"
+           [(ngModel)]="book.id">
+
+    <div>
+      <label for="title">Title</label>
+      <input type="text"
+             id="title"
+             [(ngModel)]="book.title">
+    </div>
+
+    <div>
+      <label for="pages">Pages</label>
+      <input type="text"
+             id="pages"
+             [(ngModel)]="book.pages">
+    </div>
+
+    <div>
+      <label for="format">Format</label>
+      <select id="format"
+              [(ngModel)]="book.format">
+        <option *ngFor="#f of formats"
+                [value]="f">{{f}}</option>
+      </select>
+    </div>
+
+    <div>
+      <hr>
+      <button type="submit">Save</button>
+    </div>
+
+  </form>
+</div>

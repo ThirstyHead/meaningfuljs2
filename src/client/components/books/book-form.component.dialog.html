@@ -1,0 +1,19 @@
+<paper-dialog id="bookDialog" modal role="alertdialog">
+    <h2>Book</h2>
+    <form name="bookForm">
+      <input type="hidden" name="id" id="id">
+      <paper-input label="Title"
+                   name="title"
+                   [(ngModel)]="book.title"
+                   ngDefaultControl></paper-input>
+      <paper-input label="Pages"
+                   name="pages"
+                   [(ngModel)]="book.pages"
+                   ngDefaultControl></paper-input>
+    </form>
+
+    <div class="buttons">
+      <paper-button dialog-dismiss>Cancel</paper-button>
+      <paper-button dialog-confirm autofocus>Save</paper-button>
+    </div>
+</paper-dialog>
