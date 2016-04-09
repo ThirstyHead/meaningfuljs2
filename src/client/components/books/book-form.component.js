@@ -8,7 +8,10 @@ import {BooksService} from './books.service';
 @Component({
     selector: 'my-book-form',
     templateUrl: 'components/books/book-form.component.dialog.html',
-    styleUrls: ['components/books/book-form.component.css']
+    styleUrls: ['components/books/book-form.component.css'],
+    host:{
+      '(iron-overlay-closed)':'dialogClose($event)'
+    }
 })
 export class BookFormComponent{
     constructor(booksService){
@@ -21,8 +24,13 @@ export class BookFormComponent{
       return [[BooksService]];
     }
 
-    onSubmit(){
-      // console.dir(this.book);
+    dialogClose(e){
+      if(e.srcElement.id === 'bookDialog'){
+        this.saveBook();
+      }
+    }
+
+    saveBook(){
       this.booksService.create(this.book)
                        .subscribe(
                          item => {
