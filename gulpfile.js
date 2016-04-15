@@ -114,8 +114,7 @@ gulp.task('nodemon',
                let started = false;
                let nodemonOptions = {
                    script: config.dir.server + '/server.js',
-                   watch: [config.dir.server + '/server.js',
-                           config.dir.build + '/**/*.*']
+                   watch: [config.dir.server]
                };
 
                return gulpPlugin.nodemon(nodemonOptions)
@@ -177,10 +176,10 @@ gulp.task('run',
                  browserSync.init(browserSyncOptions);
              }
 
-             // Register a watcher on the src directory for changes,
+             // Register a watcher on the src/client directory for changes,
              // which will update the build directory,
-             // which will trigger browserSync + nodemon
-             return gulp.watch(config.dir.src + '/**/*.*', ['build']);
+             // which will trigger browserSync
+             return gulp.watch(`${config.dir.client}/**/*.*`, ['build']);
          });
 
 /**
