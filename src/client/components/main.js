@@ -11,14 +11,24 @@
 // import 'rxjs/Rx';
 
 // angular2 beta.14
+// import 'es6-shim';
+// import 'reflect-metadata';
+// import 'zone.js/dist/zone';
+// import 'rxjs/Rx';
+
+// angular2 rc.1
 import 'es6-shim';
 import 'reflect-metadata';
 import 'zone.js/dist/zone';
 import 'rxjs/Rx';
 
+// angular2 beta.14
+// import {bootstrap} from 'angular2/platform/browser';
+// import {HTTP_PROVIDERS} from 'angular2/http';
 
-import {bootstrap} from 'angular2/platform/browser';
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {AppComponent} from './app/app.component';
+// angular2 rc.1
+import { bootstrap } from '@angular/platform-browser-dynamic';
+import { HTTP_PROVIDERS } from '@angular/http';
+import { AppComponent } from './app/app.component';
 
-bootstrap(AppComponent, [HTTP_PROVIDERS]);
+bootstrap(AppComponent, [ HTTP_PROVIDERS ]);
