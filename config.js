@@ -5,30 +5,39 @@ System.config({
   babelOptions: {
     "optional": [
       "runtime",
-      "optimisation.modules.system"
+      "optimisation.modules.system",
+      "es7.decorators"
     ]
   },
+
+  packages: {
+    "components": {
+        "main": "main",
+        "defaultExtension": "js"
+    }
+  },
+
   paths: {
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
 
   map: {
-    "@angular/common@2.0.0-rc.1": "npm:@angular/common@2.0.0-rc.1",
-    "@angular/compiler@2.0.0-rc.1": "npm:@angular/compiler@2.0.0-rc.1",
-    "@angular/core@2.0.0-rc.1": "npm:@angular/core@2.0.0-rc.1",
-    "@angular/http@2.0.0-rc.1": "npm:@angular/http@2.0.0-rc.1",
-    "@angular/platform-browser-dynamic@2.0.0-rc.1": "npm:@angular/platform-browser-dynamic@2.0.0-rc.1",
-    "@angular/platform-browser@2.0.0-rc.1": "npm:@angular/platform-browser@2.0.0-rc.1",
-    "@angular/router-deprecated@2.0.0-rc.1": "npm:@angular/router-deprecated@2.0.0-rc.1",
-    "@angular/router@2.0.0-rc.1": "npm:@angular/router@2.0.0-rc.1",
+    "@angular/common": "npm:@angular/common@2.0.0-rc.1",
+    "@angular/compiler": "npm:@angular/compiler@2.0.0-rc.1",
+    "@angular/core": "npm:@angular/core@2.0.0-rc.1",
+    "@angular/http": "npm:@angular/http@2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@2.0.0-rc.1",
+    "@angular/platform-browser": "npm:@angular/platform-browser@2.0.0-rc.1",
+    "@angular/router-deprecated": "npm:@angular/router-deprecated@2.0.0-rc.1",
+    "@angular/router": "npm:@angular/router@2.0.0-rc.1",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
     "core-js": "npm:core-js@1.2.6",
     "crypto": "github:jspm/nodelibs-crypto@0.1.0",
     "es6-shim": "github:es-shims/es6-shim@0.35.1",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
-    "rxjs": "npm:rxjs@5.0.0-beta.7",
+    "rxjs": "npm:rxjs@5.0.0-beta.6",
     "zone.js": "npm:zone.js@0.6.12",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"

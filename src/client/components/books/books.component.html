@@ -9,7 +9,7 @@
 <my-book-form></my-book-form>
 
 <div role="listbox">
-    <paper-item *ngFor="#book of books">
+    <paper-item *ngFor="let book of books">
       <iron-icon icon="delete"
                  item-icon
                  (click)="delete(book)"></iron-icon>

@@ -1,7 +1,7 @@
 'use strict';
 
-import {Component, EventEmitter} from 'angular2/core';
-import {NgForm} from 'angular2/common';
+import {Component, EventEmitter} from '@angular/core';
+import {NgForm} from '@angular/common';
 import {Book} from './book';
 import {BooksService} from './books.service';
 

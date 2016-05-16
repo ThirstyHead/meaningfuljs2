@@ -1,14 +1,14 @@
 'use strict';
 
-import {Component, OnInit} from 'angular2/core';
-import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {Component, OnInit} from '@angular/core';
+import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router-deprecated';
 
 // For using #location
-import {provide} from 'angular2/core';
-import {LocationStrategy, Location, HashLocationStrategy } from 'angular2/router';
+import {provide} from '@angular/core';
+import {LocationStrategy, Location, HashLocationStrategy } from '@angular/router-deprecated';
 
 // Services (e.g. Providers)
-import {HTTP_PROVIDERS} from 'angular2/http';
+import {HTTP_PROVIDERS} from '@angular/http';
 import {AuthorsService} from '../authors/authors.service';
 import {BooksService} from '../books/books.service';
 

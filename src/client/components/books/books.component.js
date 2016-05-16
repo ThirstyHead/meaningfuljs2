@@ -1,6 +1,6 @@
 'use strict';
 
-import {Component, EventEmitter} from 'angular2/core';
+import {Component, EventEmitter} from '@angular/core';
 import {BooksService} from './books.service';
 import {BookFormComponent} from './book-form.component';
 

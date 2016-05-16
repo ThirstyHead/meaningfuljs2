@@ -1,7 +1,7 @@
 <h1>{{title}}</h1>
 
 <div role="listbox">
-    <paper-item *ngFor="#author of authors">
+    <paper-item *ngFor="let author of authors">
       {{author.id}} - {{author.name}}
     </paper-item>
 </div>
