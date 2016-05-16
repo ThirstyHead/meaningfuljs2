@@ -5,7 +5,7 @@ import {Router, RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular
 
 // For using #location
 import {provide} from '@angular/core';
-import {LocationStrategy, Location, HashLocationStrategy } from '@angular/router-deprecated';
+import {LocationStrategy, Location, HashLocationStrategy } from '@angular/common';
 
 // Services (e.g. Providers)
 import {HTTP_PROVIDERS} from '@angular/http';
