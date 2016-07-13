@@ -26,9 +26,9 @@ module.exports.src = src;
 src.html = [dir.client + '/**/*.html'];
 src.css = [dir.client + '/**/*.css'];
 src.img = [
-    dir.client + '/**/*.png',
-    dir.client + '/**/*.jpg',
-    dir.client + '/**/*.gif'
+  dir.client + '/**/*.png',
+  dir.client + '/**/*.jpg',
+  dir.client + '/**/*.gif'
 ];
 src.favicon = [dir.client + '/favicon.ico'];
 src.js = [dir.client + '/**/*.js'];
@@ -56,10 +56,3 @@ dist.html = dir.dist;
 dist.css = dir.dist + '/css';
 dist.img = dir.dist + '/img';
 dist.js = dir.dist + '/js';
-
-// web server configuration
-let web = {};
-module.exports.web = web;
-
-web.hostname = 'localhost';
-web.port = 8000;

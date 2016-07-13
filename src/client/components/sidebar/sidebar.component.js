@@ -1,7 +1,7 @@
 'use strict';
 
 import {Component} from '@angular/core';
-import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
+import {ROUTER_DIRECTIVES} from '@angular/router';
 
 @Component({
   selector: 'my-sidebar',
@@ -10,8 +10,7 @@ import {Router, ROUTER_DIRECTIVES} from '@angular/router-deprecated';
   directives: [ROUTER_DIRECTIVES]
 })
 export class SidebarComponent{
-  constructor(router){
-    this.router = router;
+  constructor(){
   }
 
   // Angular 2 Dependency Injection for ECMAScript 6
@@ -20,6 +19,5 @@ export class SidebarComponent{
   // ES6 or ES7 syntax.
   // NOTE: 1st in call order
   static get parameters() {
-    return [[Router]];
   }
 }
