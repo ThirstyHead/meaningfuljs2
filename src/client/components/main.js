@@ -1,34 +1,29 @@
-// angular2 beta.5
-// import 'zone.js';
-// import 'reflect-metadata';
-// import 'angular2/bundles/angular2-polyfills';
-// import 'core-js';
-
-// angular2 beta.7
-// import 'es6-shim';
-// import 'reflect-metadata';
-// import 'zone.js/dist/zone-microtask';
-// import 'rxjs/Rx';
-
-// angular2 beta.14
-// import 'es6-shim';
-// import 'reflect-metadata';
-// import 'zone.js/dist/zone';
-// import 'rxjs/Rx';
-
-// angular2 rc.1
+// angular2 rc.4
 import 'es6-shim';
 import 'reflect-metadata';
 import 'zone.js/dist/zone';
 import 'rxjs/Rx';
 
-// angular2 beta.14
-// import {bootstrap} from 'angular2/platform/browser';
-// import {HTTP_PROVIDERS} from 'angular2/http';
+import {bootstrap} from '@angular/platform-browser-dynamic';
+import {enableProdMode} from '@angular/core';
+import {LocationStrategy,
+        HashLocationStrategy} from '@angular/common';
 
-// angular2 rc.1
-import { bootstrap } from '@angular/platform-browser-dynamic';
-import { HTTP_PROVIDERS } from '@angular/http';
-import { AppComponent } from './app/app.component';
+// NOTE: This is what we need to enable to start using non-deprecated forms
+// import { disableDeprecatedForms, provideForms } from '@angular/forms';
 
-bootstrap(AppComponent, [ HTTP_PROVIDERS ]);
+import {AppComponent} from './app/app.component';
+import {APP_ROUTER_PROVIDERS} from './app/app.routes';
+
+let PROD_MODE = false;//set by gulpfile.js
+if(PROD_MODE){
+  enableProdMode();
+}
+
+bootstrap(AppComponent, [APP_ROUTER_PROVIDERS,
+                         { provide: LocationStrategy,
+                           useClass: HashLocationStrategy }
+                         // disableDeprecatedForms(),
+                         // provideForms()
+                         ])
+.catch(err => console.error(err));

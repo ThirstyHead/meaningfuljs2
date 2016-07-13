@@ -13,20 +13,22 @@ System.config({
     "github:*": "jspm_packages/github/*",
     "npm:*": "jspm_packages/npm/*"
   },
+
   packages: {
     "components": {
-        "main": "main",
-        "defaultExtension": "js"
+      "main": "main",
+      "defaultExtension": "js"
     }
   },
+
   map: {
     "@angular/common": "npm:@angular/common@2.0.0-rc.4",
     "@angular/compiler": "npm:@angular/compiler@2.0.0-rc.4",
     "@angular/core": "npm:@angular/core@2.0.0-rc.4",
     "@angular/forms": "npm:@angular/forms@0.2.0",
     "@angular/http": "npm:@angular/http@2.0.0-rc.4",
-    "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@2.0.0-rc.4",
     "@angular/platform-browser": "npm:@angular/platform-browser@2.0.0-rc.4",
+    "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@2.0.0-rc.4",
     "@angular/router": "npm:@angular/router@3.0.0-beta.2",
     "babel": "npm:babel-core@5.8.38",
     "babel-runtime": "npm:babel-runtime@5.8.38",
@@ -332,11 +334,6 @@ System.config({
     "npm:ripemd160@1.0.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
-    },
-    "npm:rxjs@5.0.0-beta.10": {
-      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "symbol-observable": "npm:symbol-observable@1.0.1"
     },
     "npm:rxjs@5.0.0-beta.6": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
