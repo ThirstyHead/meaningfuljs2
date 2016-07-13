@@ -19,8 +19,7 @@
     "build",
     "dist",
     "test",
-    "tests",
-    "**/.*"
+    "tests"
   ],
   "devDependencies": {},
   "dependencies": {
