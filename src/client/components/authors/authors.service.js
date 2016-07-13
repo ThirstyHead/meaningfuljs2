@@ -1,7 +1,7 @@
 'use strict';
 
 import {Injectable} from '@angular/core';
-import {Http, Response} from '@angular/http';
+import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
 
 @Injectable()
@@ -28,6 +28,6 @@ export class AuthorsService{
 
   handleError(err){
     console.error(err);
-    return Observable.throw(error.json().error || 'Error in AuthorsService');
+    return Observable.throw(err.json().error || 'Error in AuthorsService');
   }
 }

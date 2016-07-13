@@ -10,7 +10,7 @@ import {AuthorsService} from './authors.service';
 })
 export class AuthorsComponent{
   constructor(authorsService){
-    this.title = "Authors";
+    this.title = 'Authors';
     this.authorsService = authorsService;
     this.authors = [];
   }
@@ -28,5 +28,5 @@ export class AuthorsComponent{
                        .subscribe(
                          authors => this.authors = authors,
                          error => this.errorMessage = error
-                       )
+                       );
   }}

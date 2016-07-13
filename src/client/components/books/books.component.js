@@ -1,6 +1,6 @@
 'use strict';
 
-import {Component, EventEmitter} from '@angular/core';
+import {Component} from '@angular/core';
 import {BooksService} from './books.service';
 import {BookFormComponent} from './book-form.component';
 
@@ -13,18 +13,9 @@ import {BookFormComponent} from './book-form.component';
 })
 export class BooksComponent{
   constructor(booksService){
-    this.title = "Books";
+    this.title = 'Books';
     this.booksService = booksService;
     this.books = [];
-
-    // EventEmitter for this component
-    this.listChanged = new EventEmitter();
-    this.listChanged.subscribe( (listChanged) => {
-      console.log("listChanged event caught");
-      this.getBooks();
-    });
-
-
   }
 
   static get parameters(){
@@ -40,7 +31,7 @@ export class BooksComponent{
                      .subscribe(
                        books => this.books = books,
                        error => this.errorMessage = error
-                     )
+                     );
   }
 
   delete(book){
@@ -49,12 +40,10 @@ export class BooksComponent{
                        result => {
                          console.log(result);
                          //  this.getBooks();
-                         this.listChanged.next();
+                        //  this.listChanged.next();
                        },
                        error => this.errorMessage = error
-                     )
+                     );
 
   }
-
-
 }
