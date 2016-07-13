@@ -1,6 +1,6 @@
 {
   "name": "meaningfuljs2",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "A simple, sane MEAN stack featuring Angular 2.",
   "homepage": "https://github.com/ThirstyHead/meaningfuljs2",
   "main": "server.js",
@@ -19,8 +19,7 @@
     "build",
     "dist",
     "test",
-    "tests",
-    "**/.*"
+    "tests"
   ],
   "devDependencies": {},
   "dependencies": {
