@@ -9,6 +9,9 @@ import {ROUTER_DIRECTIVES} from '@angular/router';
 import {HTTP_PROVIDERS} from '@angular/http';
 import {AuthorsService} from '../authors/authors.service';
 import {BooksService} from '../books/books.service';
+import {DatabaseService} from '../database/database.service';
+import {SongsService} from '../songs/songs.service';
+
 
 // Components
 import {SidebarComponent} from '../sidebar/sidebar.component';
@@ -16,7 +19,7 @@ import {SidebarComponent} from '../sidebar/sidebar.component';
 @Component({
   selector: 'my-app',
   directives: [ROUTER_DIRECTIVES, SidebarComponent],
-  providers: [AuthorsService, BooksService, HTTP_PROVIDERS],
+  providers: [AuthorsService, BooksService, DatabaseService, HTTP_PROVIDERS, SongsService],
   templateUrl: 'components/app/app.component.html',
   styleUrls: ['components/app/app.component.css']
 })
