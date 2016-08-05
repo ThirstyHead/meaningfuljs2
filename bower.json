@@ -36,6 +36,7 @@
     "paper-dialog-behavior": "PolymerElements/paper-dialog-behavior#^1.2.5",
     "paper-input": "PolymerElements/paper-input#^1.1.10",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.1.3",
-    "paper-menu": "PolymerElements/paper-menu#^1.2.2"
+    "paper-menu": "PolymerElements/paper-menu#^1.2.2",
+    "pouchdb": "^5.4.5"
   }
 }
