@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
 
+    <!-- Socket.IO -->
+    <!-- NOTE: this makes me weep hot, bitter, jspm-tinged tears of rage -->
+    <!-- Without this, Websockets won't work. Sigh... -->
+    <script src='socket.io/socket.io.js'></script>
+
+    <!-- PouchDB -->
+    <!-- NOTE: this makes me weep hot, bitter, jspm-tinged tears of rage -->
+    <!-- Without this, the Chrome PouchDB plugin doesn't work. Sigh... -->
+    <script src='bower_components/pouchdb/dist/pouchdb.js'></script>
+
     <!-- Polymer / Material Design -->
     <!-- NOTE: this makes me weep hot, bitter, jspm-tinged tears of rage -->
     <!-- When it goes beta, we'll switch to https://github.com/angular/material2 -->

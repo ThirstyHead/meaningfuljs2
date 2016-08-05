@@ -1,6 +1,6 @@
 {
   "name": "meaningfuljs2",
-  "version": "0.7.1",
+  "version": "0.8.0",
   "description": "A simple, sane MEAN stack featuring Angular 2.",
   "homepage": "https://github.com/ThirstyHead/meaningfuljs2",
   "main": "server.js",
@@ -36,6 +36,7 @@
     "paper-dialog-behavior": "PolymerElements/paper-dialog-behavior#^1.2.5",
     "paper-input": "PolymerElements/paper-input#^1.1.10",
     "paper-dropdown-menu": "PolymerElements/paper-dropdown-menu#^1.1.3",
-    "paper-menu": "PolymerElements/paper-menu#^1.2.2"
+    "paper-menu": "PolymerElements/paper-menu#^1.2.2",
+    "pouchdb": "^5.4.5"
   }
 }
