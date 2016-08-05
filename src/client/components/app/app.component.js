@@ -1,3 +1,5 @@
+/*global io */
+
 'use strict';
 
 import {Component} from '@angular/core';
@@ -33,7 +35,19 @@ export class AppComponent{
   }
 
   ngOnInit() {
-
+    this.openWebSocket();
   }
 
+  /**
+    * Opens websocket connection back to server
+    */
+  openWebSocket(){
+    let socket = io();
+    let username = localStorage.getItem('_mjs_username') || 'ANONYMOUS';
+    socket.emit('handshake', { 'username': username} );
+
+    socket.on('handshake', (msg) => {
+      console.log(msg);
+    });
+  }
 }

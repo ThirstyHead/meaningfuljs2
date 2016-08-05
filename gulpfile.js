@@ -286,7 +286,10 @@ gulp.task('sync',
               files: [config.dir.build + '/**/*.*'],
               open: false,
               port: 4000,
-              proxy: `${hostname}:${webport}`,
+              proxy: {
+                target: `${hostname}:${webport}`,
+                ws: true
+              },
               reloadOnRestart: true
             };
 
